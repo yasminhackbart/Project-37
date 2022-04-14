@@ -28,33 +28,39 @@ class Quiz {
     }
   }
 
- play(){
+play(){
+    // escreva aqui o código para ocultar os elementos da questão
     question.hide();
-    background("Yellow");
-    fill(0);
-    textSize(30);
-    text("Resultado do Questionário",340, 50);
-    text("-------------------------",320, 65);
-    Contestant.getPlayerInfo();
-    if(allContestants !== undefined){
-      debugger;
-      var display_Answers = 230;
+    // escreva o código aqui para mudar a cor de fundo
+    background("yellow");
+    // escreva o código para exibir um cabeçalho indicando o resultado do Quiz
+    text("Resultado:",20,200)
+    // chame getContestantInfo () aqui
+    Contestant.getPlayerInfo()
+    // escreva a condição para verificar se contestantInfor não é indefinido
+    if (allContestants !== undefined)
+    {
+      var mostrar = 230;
       fill("Blue");
-      textSize(20);
-      text("*NOTA: O competidor que respondeu corretamente é destacado em verde",130,230);
+      textSize(20)
+      text("Verde = Correto e vermelho = Incorreto", 20, 20)  
+    
+    // escreva aqui o código para adicionar uma nota
 
-      for(var plr in allContestants){
-        debugger;
-        var correctAns = "2";
-        if (correctAns === allContestants[plr].answer)
-          fill("Green")
-        else
-          fill("red");
-
-        display_Answers+=30;
-        textSize(20);
-        text(allContestants[plr].name + ": " + allContestants[plr].answer, 250,display_Answers)
+    // escreva o código para destacar o competidor que respondeu corretamente
+    for(var plr in allContestants){
+      var correctAns = "2";
+      if (correctAns === allContestants[plr].answer)
+      {
+      fill("Green")
       }
+    else
+    {
+      fill("red");
     }
+    mostrar+=30
+    text(allContestants[plr].name+allContestants[plr].answer, 130, mostrar)
+   }
   }
+ }
 }
