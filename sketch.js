@@ -8,7 +8,7 @@ var database;
 
 var question, contestant, quiz;
 
-var mostrar=230
+
 
 
 function setup(){
